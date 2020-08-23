@@ -1,0 +1,13 @@
+# im thinking something like this. 
+- hosts: #enter your host
+  tasks:
+    - name: Copy and unzip Splunk
+      unarchive:
+        src: "/splunk.tgz"
+        dest: "/opt"
+
+    - name: Copy and unzip Splunk etc folder
+      unarchive:
+        src: "/splunk/etc.tgz"
+        dest: "/opt/splunk/etc"
+    
