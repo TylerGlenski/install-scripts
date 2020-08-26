@@ -1,22 +1,20 @@
 #!/bin/bash
 
-# packages needing installed
-
 # update
 sudo apt-get update
 # vs Code download vs code package and add to apt repo
-printf "\n======== Downloading and installing VScode ========"
+printf "\n======== Downloading and installing VScode ========\n"
 wget -q https://packages.microsoft.com/keys/microsoft.asc -O- | sudo apt-key add -
 sudo add-apt-repository "deb [arch=amd64] https://packages.microsoft.com/repos/vscode stable main"
 sudo apt install code
 
-# pip
-printf "\n==== Installing Pip ===="
-sudo apt install python3-pip
-pip --version
+# # pip
+# printf "\n==== Installing Pip ====\n"
+# sudo apt install python3-pip
+# pip3 --version
 
 # git
-printf "\n==== Installing Git from apt ===="
+printf "\n==== Installing Git from apt ====\n"
 sudo apt-get install git
 git --version
 
@@ -48,7 +46,7 @@ sudo ln -sf /opt/telegram/Telegram /usr/bin/telegram
 rm -rf ~/Downloads/telegram
 
 # docker
-printf "\n======== Installing Docker and docker dependicies ========"
+printf "\n======== Installing Docker and docker dependicies ========\n"
 # install docker dependicies
 sudo apt-get install \
     apt-transport-https \
@@ -69,27 +67,28 @@ sudo add-apt-repository \
 sudo apt-get install docker-ce docker-ce-cli containerd.io
 
 # aws cli
-printf "\n ======== Installing AWS CLI ========"
+printf "\n ======== Installing AWS CLI ========\n"
 curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip"
 unzip awscliv2.zip
 sudo ./aws/install
 aws --version
 
 # nmap
-printf "============ Installing Nmap ==========="
+printf "\n============ Installing Nmap ===========\n"
 sudo apt-get install nmap
 nmap --version
 
 # chrome
-printf "==== Installing chrome ===="
+printf "\n==== Installing chrome ====\n"
 mkdir ~/Downloads/chrome
 wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb -P ~/Downloads/chrome
 sudo apt install ~/Downloads/chrome/google-chrome-stable_current_amd64.deb
 sudo rm -rf ~/Downloads/chrome
 
 # ansible
-printf "==== Installing Ansible via Pip ===="
-pip install ansible
+printf "\n==== Installing Ansible via Pip ====\n"
+sudo apt-get install ansible
+ansible --version
 
 
 
